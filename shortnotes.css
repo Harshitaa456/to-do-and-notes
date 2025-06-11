@@ -1,0 +1,112 @@
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Body and Background */
+  body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  
+  /* Header Title */
+  .header h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    color: darkblue;
+  }
+  
+  /* Icon Buttons */
+  .icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    object-fit: contain;
+  }
+  
+  /* Notes Container */
+  #notesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 10px;
+  }
+  .icon-btn {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    cursor: pointer;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+  .note {
+    width: 300px;
+    min-height: 200px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .note textarea{
+    width: 300px;
+    height: 200px;
+    resize: both;
+    border: none;
+    outline:none;
+    font-size: 20px;
+    font-family: 'poppins',sans-serif;
+    padding: 8px;
+    background-color: transparent;
+    overflow: auto;
+  }
+  .note-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+  }
+  
+  .icon-btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .icon-btn:hover {
+    transform: scale(1.2);
+  }
+  .note-text {
+    min-height: 100px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    background: transparent;
+    color: #333;
+  }
+  
+  
+  
