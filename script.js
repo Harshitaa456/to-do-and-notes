@@ -15,30 +15,30 @@ function addTask() {
   }
 
   inputBox.value = "";
-  // saveData(); // ⬅️ Commented for backend use
+   saveData(); // ⬅️ Commented for backend use
 }
 
 listcontainer.addEventListener("click", function (e) {
   if (e.target.tagName === "LI") {
     e.target.classList.toggle("checked");
-    // saveData(); // ⬅️ Commented for backend use
+     saveData(); // ⬅️ Commented for backend use
   } else if (e.target.tagName === "SPAN") {
     e.target.parentElement.remove();
-    // saveData(); // ⬅️ Commented for backend use
+    saveData(); // ⬅️ Commented for backend use
   }
 }, false);
 
-// function saveData() {
-//   localStorage.setItem("data", listcontainer.innerHTML);
-// }
+ function saveData() {
+   localStorage.setItem("data", listcontainer.innerHTML);
+ }
 
-// function showTask() {
-//   listcontainer.innerHTML = localStorage.getItem("data");
-// }
+ function showTask() {
+   listcontainer.innerHTML = localStorage.getItem("data");
+ }
 
-// showTask(); // ⬅️ Commented for backend use
+ showTask(); // ⬅️ Commented for backend use
 
-// 🌟 Motivation Feature
+ //🌟 Motivation Feature
 const motivationQuotes = [
   "You're doing better than you think! 💫",
   "Believe in yourself — you’ve got this. 💪",
