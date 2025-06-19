@@ -15,7 +15,6 @@ Designed with simplicity and responsiveness in mind, this app works smoothly on 
 * 🧠 Mood Memo: Add one-line thoughts with mood selection using emojis
 * 💾 All data is saved using localStorage (no backend required)
 * 📱 Fully responsive UI for mobile and desktop devices
-* 
 
 ## Tech Stack/Built With
 
