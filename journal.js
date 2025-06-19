@@ -15,24 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const box = document.createElement("div");
     box.className = "entry-box";
 
-    // ✅ Clone mood selector
+    // Clone mood selctor
     const moodSelect = moodSelectorTemplate.cloneNode(true);
     moodSelect.style.display = "inline-block"; // make it visible
     moodSelect.removeAttribute("id");
 
-    // ✅ Create input box
+    // Create input box
     const input = document.createElement("input");
     input.type = "text";
     input.placeholder = "Write one line...";
     input.className = "journal-input";
 
-    // ✅ Create save button
+    //  Create save button
     const save = document.createElement("button");
     save.innerText = "✅ Save";
     save.className = "save-btn";
     save.style.fontWeight = "bold";
 
-    // ✅ Save entry when save button is clicked
+    //  Save entry when save button is clicked
     save.addEventListener("click", function () {
       const text = input.value.trim();
       if (text === "") {
@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
       box.remove();
     });
 
-    // ✅ Append all elements to box
+    //  Append all elements to box
     box.appendChild(moodSelect);
     box.appendChild(input);
     box.appendChild(save);
 
-    // ✅ Show new box at the top
+    //  Show new box at the top
     entriesContainer.prepend(box);
   });
 

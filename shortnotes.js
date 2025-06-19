@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     saveAllNotes();
   });
 
-  // Back button navigates to the to-do list
+  // Back button navgates to the to-do list
   backBtn.addEventListener("click", () => {
     window.location.href = "index.html";
   });
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     notesContainer.appendChild(note);
   }
 
-  // — helper: collect all notes and save to localStorage —
+  //  collect all notes and save to localStorage —
   function saveAllNotes() {
     const texts = Array.from(document.querySelectorAll('.note-text'))
                       .map(div => div.innerHTML);

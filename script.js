@@ -15,7 +15,7 @@ function addTask() {
   }
 
   inputBox.value = "";
-   saveData(); // ⬅️ Commented for backend use
+   saveData(); // ⬅️ Comented for backend use
 }
 
 listcontainer.addEventListener("click", function (e) {
@@ -24,7 +24,7 @@ listcontainer.addEventListener("click", function (e) {
      saveData(); // ⬅️ Commented for backend use
   } else if (e.target.tagName === "SPAN") {
     e.target.parentElement.remove();
-    saveData(); // ⬅️ Commented for backend use
+    saveData(); // ⬅️ Comented for backend use
   }
 }, false);
 
