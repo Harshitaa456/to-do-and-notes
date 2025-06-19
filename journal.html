@@ -8,25 +8,47 @@
 </head>
 <body>
   <div class="journal-container">
+
+    <!-- Header with Back and Add buttons -->
     <div class="journal-header">
       <img src="images/back.png" alt="Back" class="icon" id="backBtn" />
       <h1>One Line Journal</h1>
-      <img src="images/plus.png" alt="Add" class="icon" id="addBtn" />
+      <button id="addBtn" class="icon-btn">
+        <img src="images/plus.png" alt="Add" />
+      </button>
     </div>
-    <div id="entriesContainer" class="entries-container">
-      <!-- One line entries will go here -->
-    </div>
+
+    <!-- HIDDEN Mood Selector Template (used by JS when + is clicked) -->
+    <select id="moodSelectorTemplate" style="display: none;">
+      <option value="" disabled selected>Select Mood 😊</option>
+      <option value="😊">😊 Happy</option>
+      <option value="😄">😄 Glad</option>
+      <option value="😌">😌 Calm</option>
+      <option value="🙏">🙏 Grateful</option>
+      <option value="😴">😴 Tired</option>
+      <option value="😣">😣 Stressed</option>
+      <option value="💪">💪 Confident</option>
+      <option value="🌞">🌞 Optimistic</option>
+      <option value="🏆">🏆 Proud</option>
+      <option value="⚖️">⚖️ Balanced</option>
+      <option value="🌟">🌟 Inspired</option>
+    </select>
+
+    <!-- Container where new entries will show -->
+    <div id="entriesContainer" class="entries-container"></div>
+
   </div>
 
   <script src="journal.js"></script>
+
   <footer class="credits">
     <p>
       Icons made by 
-
       <a href="https://www.flaticon.com/free-icons/delete" title="delete icons" target="_blank">Delete icons</a> created by Ilham Fitrotul Hayat - Flaticon <br>
       <a href="https://www.flaticon.com/free-icons/add" title="add icons" target="_blank">Add icons</a> created by Pixel perfect - Flaticon<br>
       <a href="https://www.flaticon.com/free-icons/back-button" title="back button icons" target="_blank">Back button icons</a> created by riajulislam - Flaticon
-      </p>
+    </p>
   </footer>
 </body>
 </html>
+

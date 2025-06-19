@@ -2,25 +2,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const addBtn = document.getElementById("addBtn");
   const backBtn = document.getElementById("backBtn");
   const entriesContainer = document.getElementById("entriesContainer");
+  const moodSelectorTemplate = document.getElementById("moodSelectorTemplate"); // ✅ FIXED ID here
 
-  // Load saved entries when page opens
+  // Load entries from localStorage on page load
   const savedEntries = JSON.parse(localStorage.getItem("entries")) || [];
   for (let i = 0; i < savedEntries.length; i++) {
     showEntry(savedEntries[i]);
   }
 
-  // When you click the Add (+) button
+  // When you click the "+" button
   addBtn.addEventListener("click", function () {
     const box = document.createElement("div");
+    box.className = "entry-box";
 
-    const input = document.createElement("textarea");
+    // ✅ Clone mood selector
+    const moodSelect = moodSelectorTemplate.cloneNode(true);
+    moodSelect.style.display = "inline-block"; // make it visible
+    moodSelect.removeAttribute("id");
+
+    // ✅ Create input box
+    const input = document.createElement("input");
+    input.type = "text";
     input.placeholder = "Write one line...";
+    input.className = "journal-input";
 
+    // ✅ Create save button
     const save = document.createElement("button");
     save.innerText = "✅ Save";
+    save.className = "save-btn";
     save.style.fontWeight = "bold";
 
-
+    // ✅ Save entry when save button is clicked
     save.addEventListener("click", function () {
       const text = input.value.trim();
       if (text === "") {
@@ -28,22 +40,29 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      showEntry(text);
-      saveEntry(text);
+      const mood = moodSelect.value;
+      const entryWithMood = `${mood} ${text}`;
+
+      showEntry(entryWithMood);
+      saveEntry(entryWithMood);
       box.remove();
     });
 
+    // ✅ Append all elements to box
+    box.appendChild(moodSelect);
     box.appendChild(input);
     box.appendChild(save);
+
+    // ✅ Show new box at the top
     entriesContainer.prepend(box);
   });
 
-  // Go back to main page
+  // Back button
   backBtn.addEventListener("click", function () {
     window.location.href = "index.html";
   });
 
-  // Function to show a saved entry with delete button
+  // Show a saved journal entry
   function showEntry(text) {
     const box = document.createElement("div");
     box.className = "entry-box";
@@ -67,14 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
     entriesContainer.appendChild(box);
   }
 
-  // Save a new entry in localStorage
+  // Save entry to localStorage
   function saveEntry(text) {
     const entries = JSON.parse(localStorage.getItem("entries")) || [];
     entries.push(text);
     localStorage.setItem("entries", JSON.stringify(entries));
   }
 
-  // Remove a deleted entry from localStorage
+  // Remove entry from localStorage
   function removeEntry(text) {
     let entries = JSON.parse(localStorage.getItem("entries")) || [];
     entries = entries.filter(function (entry) {

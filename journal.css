@@ -25,6 +25,8 @@ body {
   width: 30px;
   height: 30px;
   cursor: pointer;
+  cursor: pointer;
+  object-fit: contain;
 }
 
 h1 {
@@ -94,3 +96,50 @@ textarea {
 .credits a:hover {
   text-decoration: underline;
 }
+.mood-selector {
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #000;
+}
+.mood-entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.journal-input {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+}
+
+#addBtn{
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+#addBtn img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+
+}
+
+
+
